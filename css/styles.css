@@ -1,0 +1,224 @@
+/* ============= GLOBAL ============= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e0e0e;
+    color: white;
+}
+
+/* ============= HERO SECTION ============= */
+.hero {
+    position: relative;
+    width: 90%;  /* 🔥 Igual que el video */
+    max-width: 1200px; /* 🔥 Coincide con el video */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 100px auto; /* 🔥 Centrar horizontalmente */
+    overflow: hidden; /* 🔥 Evita el exceso de fondo */
+}
+.hero__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* 🔥 Ocupa todo el ancho de .hero */
+    height: 100%; /* 🔥 Se adapta a la altura */
+    object-fit: cover;
+}
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero__title {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+/* 🔥 HERO OPTIONS - LISTA INTERACTIVA */
+.hero__options {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.hero__options li {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: rgba(255, 0, 0, 0.8); /* 🔥 Rojo con opacidad */
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, background 1s ease-out;
+    color: white;
+    text-align: center;
+}
+
+.hero__options li:hover {
+    background: rgba(255, 0, 0, 1); /* 🔥 Rojo más sólido */
+    transform: scale(1.05);
+}
+
+/* 🔥 Animación de entrada */
+.hero__options li.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔥 Nueva clase para hacer desaparecer el fondo */
+.hero__options li.fade-out {
+    background: transparent !important; /* 🔥 Hace que el fondo desaparezca */
+    color: white; /* 🔥 Mantiene el texto visible */
+    border: 2px solid transparent; /* 🔥 Evita que quede un borde residual */
+}
+
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: darkred;
+}
+
+/* ============= NAVBAR ============= */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid red;
+    backdrop-filter: blur(10px);
+    padding: 20px 5%; /* Asegura una buena altura */
+    height: 80px; /* 🔥 Define altura fija */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav__logo img {
+    height: 80px;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+    color: red;
+}
+
+/* ============= GALERÍA DE COCHES (CARRUSEL) ============= */
+.car-gallery {
+    text-align: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.car-slider {
+    width: 90%;
+    margin: auto;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 350px; /* 🔥 Aumentado para que se vean mejor */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.1);
+}
+
+/* ============= VIDEO EN LA GALERÍA ============= */
+.car-video-container {
+    width: 500px; /* 🔥 Más pequeño */
+    height: 250px;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 30px auto 20px auto;
+    display: none;
+}
+
+.car-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============= TÍTULOS ============= */
+.section__title {
+    z-index: 5;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+
+/* 🔥 Botón para cerrar el tráiler */
+.close-trailer {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.close-trailer:hover {
+    background: rgba(255, 0, 0, 0.8);
+}

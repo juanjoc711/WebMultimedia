@@ -1,0 +1,159 @@
+/* ================== GLOBAL ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e0e0e;
+    color: white;
+    text-align: center;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ================== SECCIÓN GALERÍA ================== */
+.car-gallery {
+    padding: 50px 0;
+}
+
+.car-slider {
+    width: 90%;
+    margin: auto;
+}
+
+/* ================== REDES SOCIALES ================== */
+.socials {
+    padding: 50px 0;
+    background: rgba(255, 0, 0, 0.1); /* 🔥 Fondo ligeramente rojo */
+    border-top: 2px solid red;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    background: rgba(255, 0, 0, 0.7); /* 🔥 Rojo transparente */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    background: red;
+    transform: scale(1.1);
+}
+
+/* ================== CONTACTO ================== */
+.contacto {
+    padding: 50px 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.contacto p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.contacto a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contacto a:hover {
+    text-decoration: underline;
+}
+
+/* ================== SECCIÓN EQUIPO ================== */
+.equipo {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.equipo img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.miembros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.miembro {
+    width: 200px;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.miembro:hover {
+    background: red;
+    transform: scale(1.05);
+}
+
+.miembro img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.miembro h3 {
+    font-size: 1.2rem;
+}
+
+.miembro p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* ================== SECCIÓN DESCARGA APP ================== */
+.descargar-app {
+    padding: 50px 0;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: darkred;
+}
+
+
+
+
+/*logo*/
+.nav__logo img {
+    height: 500px; /* 🔥 Ajusta el tamaño del logo */
+    width: auto;  /* 🔥 Mantiene la proporción */
+}
