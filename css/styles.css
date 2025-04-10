@@ -222,3 +222,59 @@ body {
 .close-trailer:hover {
     background: rgba(255, 0, 0, 0.8);
 }
+
+
+/*navbar nueva::after*/
+.nav-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .drawer-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateX(-100%); /* 🔥 Esto es clave para el inicio */
+  }
+  
+  .drawer-header img {
+    max-width: 180px;
+    margin-bottom: 3rem;
+  }
+  
+  .drawer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .drawer-menu ul li {
+    margin: 1.5rem 0;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .drawer-menu ul li:hover {
+    color: #ff3c3c;
+  }
+  

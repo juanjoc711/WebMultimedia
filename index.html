@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documental Coches - Inicio</title>
+    <title>Underground Racing Cantabria</title>
 
     <!-- ICONOS -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -26,22 +26,25 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header class="header" id="header">
-        <a href="#" class="nav__logo">
-            <img src="assets/img/logo.JPG" alt="Logo Documental Coches">
-        </a>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li><a href="#home" class="nav__link">Inicio</a></li>
-                <li><a href="noticias.html" class="nav__link">Noticias</a></li>
-                <li><a href="#galeria" class="nav__link">Galería</a></li>
-                <li><a href="equipo.html" class="nav__link">Equipo</a></li>
-                <li><a href="#contacto" class="nav__link">Contáctanos</a></li>
-                <li><a href="app.html" class="nav__link">App</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- BOTÓN HAMBURGUESA -->
+    <button id="menuToggle" class="nav-toggle">
+        <i class="ri-menu-line"></i>
+    </button>
+
+    <!-- MENÚ LATERAL -->
+    <nav class="drawer-menu" id="drawerMenu">
+        <div class="drawer-header">
+            <img src="assets/img/logo.JPG" alt="Logo Underground Coches">
+        </div>
+        <ul>
+            <li onclick="scrollToSection('#home')">🏠 Inicio</li>
+            <li onclick="window.location='noticias.html'">📰 Noticias</li>
+            <li onclick="scrollToSection('#galeria')">📸 Galería</li>
+            <li onclick="window.location='equipo.html'">👥 Equipo</li>
+            <li onclick="scrollToSection('#contacto')">📞 Contacto</li>
+            <li onclick="window.location='app.html'">📱 App</li>
+        </ul>
+    </nav>
 
     <!-- HERO CON 3D -->
     <section class="hero" id="home">
