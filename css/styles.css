@@ -222,3 +222,79 @@ body {
 .close-trailer:hover {
     background: rgba(255, 0, 0, 0.8);
 }
+.nav-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-toggle img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+  
+  .nav-toggle img {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    image-rendering: auto;
+    transition: filter 0.3s ease;
+  }
+  
+  .nav-toggle:hover img {
+    filter: drop-shadow(0 0 8px red);
+  }
+  
+  .drawer-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateX(-100%);
+  }
+  
+  .drawer-header img {
+    max-width: 180px;
+    margin-bottom: 3rem;
+  }
+  
+  .drawer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .drawer-menu ul li {
+    margin: 1.5rem 0;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .drawer-menu ul li:hover {
+    color: #ff3c3c;
+  }
+  

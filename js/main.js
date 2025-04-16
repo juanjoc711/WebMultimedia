@@ -8,18 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "assets/videos/videofondo4.MOV"
     ];
     let videoIndex = 0;
-    let isTrailerPlaying = false; // Para controlar si el tráiler está en reproducción
+    let isTrailerPlaying = false;
 
     function changeBackgroundVideo() {
-        if (!isTrailerPlaying) { // Solo cambia si el tráiler NO está en reproducción
+        if (!isTrailerPlaying) {
             videoIndex = (videoIndex + 1) % videoSources.length;
             heroVideo.src = videoSources[videoIndex];
-            heroVideo.load(); // 🔥 Asegurar que el video cargue correctamente
+            heroVideo.load();
             heroVideo.play();
         }
     }
 
-    // Cambiar el video de fondo cada 10 segundos
     setInterval(changeBackgroundVideo, 10000);
 
     // 🔥 2️⃣ Inicializar carrusel con Swiper.js
@@ -44,13 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
     options.forEach((option, index) => {
         setTimeout(() => {
             option.classList.add("show");
-
-            // 🔥 Después de 4 segundos, quitar el fondo rojo
             setTimeout(() => {
                 option.classList.add("fade-out");
             }, 4000);
-            
-        }, index * 500); // 🔥 Aparecen en cascada con 500ms de diferencia
+        }, index * 500);
     });
 
     // 🔥 4️⃣ Reproducir el tráiler al hacer clic
@@ -59,32 +55,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeTrailerButton = document.getElementById("closeTrailer");
 
     playTrailerButton.addEventListener("click", function () {
-        isTrailerPlaying = true; // 🔥 Detener cambio de videos de fondo
-        heroVideo.src = "assets/videos/videotrailer.mp4"; // 🔥 Cambia al tráiler
-        heroVideo.muted = false; // 🔥 Activa el sonido
-        heroVideo.loop = false; // 🔥 No se repite
+        isTrailerPlaying = true;
+        heroVideo.src = "assets/videos/videotrailer.mp4";
+        heroVideo.muted = false;
+        heroVideo.loop = false;
         heroVideo.load();
-        heroVideo.play(); // 🔥 Reproduce
+        heroVideo.play();
 
-        heroContent.style.display = "none"; // 🔥 Oculta el contenido
-        closeTrailerButton.style.display = "block"; // 🔥 Muestra el botón de cerrar
+        heroContent.style.display = "none";
+        closeTrailerButton.style.display = "block";
     });
 
-    // 🔥 5️⃣ Cerrar el tráiler y volver al estado original
     closeTrailerButton.addEventListener("click", function () {
-        isTrailerPlaying = false; // 🔥 Reactivar el cambio de videos de fondo
-        heroVideo.src = videoSources[videoIndex]; // 🔥 Vuelve al video de fondo actual
-        heroVideo.muted = true; // 🔥 Silencia el video
-        heroVideo.loop = true; // 🔥 Lo pone en loop de nuevo
+        isTrailerPlaying = false;
+        heroVideo.src = videoSources[videoIndex];
+        heroVideo.muted = true;
+        heroVideo.loop = true;
         heroVideo.load();
-        heroVideo.play(); // 🔥 Reproduce
+        heroVideo.play();
 
-        heroContent.style.display = "block"; // 🔥 Muestra el contenido
-        closeTrailerButton.style.display = "none"; // 🔥 Oculta el botón de cerrar
+        heroContent.style.display = "block";
+        closeTrailerButton.style.display = "none";
     });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // 🔥 1️⃣ Mapeo de secciones
+
+    // 🔥 5️⃣ Mapeo de secciones para scroll smooth
     const sectionMapping = {
         "#galeria": document.getElementById("galeria"),
         "#socials": document.getElementById("socials"),
@@ -92,28 +86,52 @@ document.addEventListener("DOMContentLoaded", function () {
         "#home": document.getElementById("home"),
     };
 
-    // 🔥 2️⃣ Hacer que los botones interactivos hagan scroll
     document.querySelectorAll(".hero__options li").forEach(option => {
         option.addEventListener("click", function () {
             const target = this.getAttribute("data-target");
             if (target && sectionMapping[target]) {
-                sectionMapping[target].scrollIntoView({
-                    behavior: "smooth"
-                });
+                sectionMapping[target].scrollIntoView({ behavior: "smooth" });
             }
         });
     });
 
-    // 🔥 3️⃣ Hacer que el navbar haga scroll a las secciones
     document.querySelectorAll(".nav__link").forEach(link => {
         link.addEventListener("click", function (e) {
             const target = this.getAttribute("href");
             if (target.startsWith("#") && sectionMapping[target]) {
                 e.preventDefault();
-                sectionMapping[target].scrollIntoView({
-                    behavior: "smooth"
-                });
+                sectionMapping[target].scrollIntoView({ behavior: "smooth" });
             }
         });
     });
+
+    // 🔥 6️⃣ Menú lateral Drawer con GSAP (mejorado)
+    const menuToggle = document.getElementById("menuToggle");
+    const drawer = document.getElementById("drawerMenu");
+    const drawerLogo = document.getElementById("drawerLogo");
+    let menuOpen = false;
+
+    if (menuToggle && drawer) {
+        gsap.set(drawer, { x: '-100%' });
+
+        const toggleMenu = (open) => {
+            if (open) {
+                gsap.to(drawer, { x: '0%', duration: 0.5, ease: "power2.out" });
+                menuToggle.style.display = "none";
+                menuOpen = true;
+            } else {
+                gsap.to(drawer, { x: '-100%', duration: 0.5, ease: "power2.out" });
+                menuToggle.style.display = "flex";
+                menuOpen = false;
+            }
+        };
+
+        menuToggle.addEventListener("click", () => toggleMenu(true));
+        drawerLogo?.addEventListener("click", () => toggleMenu(false));
+
+        document.querySelectorAll("#drawerMenu li").forEach(item => {
+            item.addEventListener("click", () => toggleMenu(false));
+        });
+    }
+    
 });
