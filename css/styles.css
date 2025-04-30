@@ -223,6 +223,9 @@ body {
     background: rgba(255, 0, 0, 0.8);
 }
 /* ============= TODO REVISAR FOOTER ============= */
+
+
+/*navbar nueva::after*/
 .nav-toggle {
     position: fixed;
     top: 1rem;
@@ -273,16 +276,14 @@ body {
   
   /* MENÚ DRAWER ESTILO DARK-TECH CON LUZ SUAVE */
 .drawer-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 100vh;
-    background: linear-gradient(145deg, #0a0a0a 20%, #111111 80%);
-    z-index: 1000;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1.5rem;
     box-shadow: 6px 0 25px rgba(255, 0, 0, 0.3);
     transform: translateX(-100%);
     overflow-y: auto;
@@ -299,6 +300,7 @@ body {
   }
   
   /* Opciones del drawer */
+
   .drawer-menu ul {
     list-style: none;
     padding: 0;
@@ -316,3 +318,5 @@ body {
   .drawer-menu ul li:hover {
     color: #ff3c3c;
   }
+  
+  

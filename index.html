@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documental Coches - Inicio</title>
+    <title>Underground Racing Cantabria</title>
 
     <!-- ICONOS -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -48,29 +48,49 @@
   
 
 
-    <!-- HERO CON 3D -->
+
+    <!-- MENÚ LATERAL -->
+    <nav class="drawer-menu" id="drawerMenu">
+        <div class="drawer-header">
+            <img src="assets/img/logo.JPG" alt="Logo Underground Coches">
+        </div>
+        <ul>
+            <li onclick="scrollToSection('#home')">🏠 Inicio</li>
+            <li onclick="window.location='noticias.html'">📰 Noticias</li>
+            <li onclick="scrollToSection('#galeria')">📸 Galería</li>
+            <li onclick="window.location='equipo.html'">👥 Equipo</li>
+            <li onclick="scrollToSection('#contacto')">📞 Contacto</li>
+            <li onclick="window.location='app.html'">📱 App</li>
+        </ul>
+    </nav>
+
+
+        <!-- HERO CON 3D -->
     <section class="hero" id="home">
         <model-viewer
-            src="assets/model/bugatti.glb"
-            alt="Bugatti Chiron"
-            auto-rotate
-            camera-controls
-            disable-zoom
-            exposure="1.1"
-            shadow-intensity="1"
-            style="width: 100%; height: 100vh; object-fit: cover;"
-            id="bugattiViewer">
-        </model-viewer>
+        src="assets/model/bugatti.glb"
+        alt="Bugatti Chiron"
+        auto-rotate
+        camera-controls
+        disable-zoom
+        exposure="2"
+        shadow-intensity="100"
+        shadow-softness="20"
+        environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+        style="width: 100%; height: 100vh; object-fit: contain; background-color: #000000; border-radius: 12px;">
+    </model-viewer>
 
         <div class="hero__overlay"></div>
 
         <div class="hero__content" id="heroContent">
             <h1 class="hero__title">Descubre el Bugatti Chiron en 3D</h1>
             <ul class="hero__options">
-                <li data-target="#galeria">📸 Galería de fotos</li>
-                <li data-target="#contacto">📲 Redes sociales</li>
                 <li id="playTrailer">🎬 Tráiler del documental</li>
                 <li data-target="#noticias">📰 Noticias recientes</li>
+                <li data-target="#galeria">📸 Galería de fotos</li>
+                <li data-target="#contacto">📲 Redes sociales</li>
+                
+                
             </ul>
         </div>
 
