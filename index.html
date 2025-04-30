@@ -46,7 +46,8 @@
         </ul>
     </nav>
 
-    <!-- HERO CON 3D -->
+
+        <!-- HERO CON 3D -->
     <section class="hero" id="home">
         <model-viewer
             src="assets/model/bugatti.glb"
@@ -54,8 +55,9 @@
             auto-rotate
             camera-controls
             disable-zoom
-            exposure="1.1"
+            exposure="1.7"
             shadow-intensity="1"
+            shadow-softness="0.9"
             style="width: 100%; height: 100vh; object-fit: cover;"
             id="bugattiViewer">
         </model-viewer>
@@ -65,10 +67,12 @@
         <div class="hero__content" id="heroContent">
             <h1 class="hero__title">Descubre el Bugatti Chiron en 3D</h1>
             <ul class="hero__options">
+                <li id="playTrailer">🎬 Tráiler del documental</li>
+                <li><a href="noticias.html" target="_blank">📰 Noticias recientes</a></li>
                 <li data-target="#galeria">📸 Galería de fotos</li>
                 <li data-target="#contacto">📲 Redes sociales</li>
-                <li id="playTrailer">🎬 Tráiler del documental</li>
-                <li data-target="#noticias">📰 Noticias recientes</li>
+                
+                
             </ul>
         </div>
 
