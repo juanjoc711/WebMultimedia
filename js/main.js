@@ -116,8 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const toggleMenu = (open) => {
             if (open) {
-                gsap.to(drawer, { x: '0%', duration: 0.5, ease: "power2.out" });
-                menuToggle.style.display = "none";
+                gsap.fromTo(drawer,
+                    { x: '-100%', opacity: 0.4, skewX: -10 },
+                    { x: '0%', opacity: 1, skewX: 0, duration: 0.6, ease: "power4.out" }
+                  );                menuToggle.style.display = "none";
                 menuOpen = true;
             } else {
                 gsap.to(drawer, { x: '-100%', duration: 0.5, ease: "power2.out" });

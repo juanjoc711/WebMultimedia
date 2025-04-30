@@ -157,3 +157,120 @@ h1, h2 {
     height: 500px; /* 🔥 Ajusta el tamaño del logo */
     width: auto;  /* 🔥 Mantiene la proporción */
 }
+
+
+/* estilos del apartado noticias*/
+body.noticias-body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a0a0a;
+    color: #f1f1f1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #111;
+    border-bottom: 1px solid #222;
+}
+
+.nav__logo img {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ff3c3c;
+}
+
+.noticias-section {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.25);
+}
+
+.news-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-content h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.news-content p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.news-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #ff3c3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-link:hover {
+    color: #fff;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #111;
+    color: #777;
+    font-size: 0.9rem;
+}
+.header .nav__logo img {
+    height: 60px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px #ff3c3c);
+    transition: all 0.3s ease;
+}
+
+.header .nav__logo img:hover {
+    filter: drop-shadow(0 0 10px #ff3c3c) brightness(1.1);
+}
+
+.nav-toggle img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
