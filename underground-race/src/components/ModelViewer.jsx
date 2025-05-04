@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import "@google/model-viewer";
 
 const ModelViewer = ({ cameraAngle }) => {
   const modelRef = useRef();
