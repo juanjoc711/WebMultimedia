@@ -23,24 +23,25 @@ const iconMap = {
   Redes: <FaHashtag className="text-cyan-400 text-xl" />,
 };
 
-const MiniCard = ({ section, position = "left" }) => {
+const MiniCard = ({ section, position = "left", onClick }) => {
   if (!section) return null;
   const isLeft = position === "left";
+
   return (
-    <motion.div
-      className={`bg-black/40 backdrop-blur-sm rounded-xl px-4 py-3 text-white text-center w-40 absolute bottom-10 ${isLeft ? "left-4" : "right-4"} z-40 opacity-50`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 0.5, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.4 }}
+    <motion.button
+      onClick={onClick}
+      whileHover={{ scale: 1.05, opacity: 1 }}
+      className={`bg-black/40 backdrop-blur-sm rounded-xl px-4 py-3 text-white text-center w-40 absolute bottom-10 ${
+        isLeft ? "left-4" : "right-4"
+      } z-40 opacity-50 hover:opacity-100 hover:bg-black/70 transition-all`}
     >
       <div className="flex justify-center mb-1">{iconMap[section.title]}</div>
       <p className="text-xs font-bold">{section.title}</p>
-    </motion.div>
+    </motion.button>
   );
 };
 
-const SectionPreview = ({ index, sections }) => {
+const SectionPreview = ({ index, sections, setIndex }) => {
   if (!sections || index < 0 || index >= sections.length) return null;
 
   const current = sections[index];
@@ -82,9 +83,18 @@ const SectionPreview = ({ index, sections }) => {
           )}
         </div>
 
-        {/* Mini previews laterales */}
-        <MiniCard section={prev} position="left" />
-        <MiniCard section={next} position="right" />
+        {/* Mini-card izquierda */}
+        <MiniCard
+          section={prev}
+          position="left"
+          onClick={() => setIndex(index - 1)}
+        />
+        {/* Mini-card derecha */}
+        <MiniCard
+          section={next}
+          position="right"
+          onClick={() => setIndex(index + 1)}
+        />
       </motion.div>
     </AnimatePresence>
   );

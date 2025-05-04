@@ -86,8 +86,8 @@ const Home = () => {
       <Navbar />
       <ScrollHint />
       <ModelViewer cameraAngle={sections[index].angle} />
-      <SectionPreview index={index} sections={sections} />
-    </div>
+      <SectionPreview index={index} sections={sections} setIndex={setIndex} />
+      </div>
   );
 };
 
