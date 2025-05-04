@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -11,6 +11,7 @@ import {
   FaHome,
   FaHashtag,
 } from "react-icons/fa";
+import SocialsDropdown from "./SocialsDropdown"; // 👈 nuevo
 
 const iconMap = {
   Inicio: <FaHome className="text-cyan-400 text-xl" />,
@@ -62,8 +63,9 @@ const MiniCard = ({ section, position = "left", onClick, scrollDir }) => {
   );
 };
 
-
 const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
+  const [showSocials, setShowSocials] = useState(false);
+
   if (!sections || index < 0 || index >= sections.length) return null;
 
   const current = sections[index];
@@ -94,7 +96,18 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
           </div>
           <h2 className="text-xl font-bold text-cyan-300">{current.title}</h2>
           <p className="text-sm mt-1">{current.description}</p>
-          {current.link.startsWith("/") ? (
+
+          {current.title === "Redes" ? (
+            <button
+              onClick={() => setShowSocials(!showSocials)}
+              className="mt-4 inline-block font-semibold text-white hover:underline transition-all bg-transparent border-none p-0"
+              style={{ all: "unset" }}
+            >
+              Ver más →
+            </button>
+
+          ) : current.link.startsWith("/") ? (
+
             <Link
               to={current.link}
               className="mt-4 inline-block text-white font-semibold hover:underline transition-all"
@@ -113,6 +126,10 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
           )}
         </div>
 
+        {current.title === "Redes" && showSocials && (
+          <SocialsDropdown onClose={() => setShowSocials(false)} />
+        )}
+
         <MiniCard
           section={prev}
           position="left"
@@ -125,7 +142,6 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
           onClick={() => setIndex(index + 1)}
           scrollDir={scrollDir}
         />
-
       </motion.div>
     </AnimatePresence>
   );
