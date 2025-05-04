@@ -36,22 +36,23 @@ const Navbar = () => {
 
       {open && (
         <div className="mt-4 p-4 bg-black/80 rounded-xl backdrop-blur-md shadow-2xl flex flex-col gap-3 w-56 border border-white/10 animate-fade-in-down">
-          <NavItem to="/" icon={<FaHome />} label="Inicio" />
-          <NavItem to="/noticias" icon={<FaNewspaper />} label="Noticias" />
-          <NavItem to="/galeria" icon={<FaImages />} label="Galería" />
-          <NavItem to="/equipo" icon={<FaUsers />} label="Equipo" />
-          <NavItem to="/app" icon={<FaMobileAlt />} label="App" />
-          <NavItem to="/merch" icon={<FaTshirt />} label="Merch" />
-          <NavItem to="/trailer" icon={<FaVideo />} label="Trailer" />
+          <NavItem to="/" icon={<FaHome />} label="Inicio" setOpen={setOpen} />
+          <NavItem to="/noticias" icon={<FaNewspaper />} label="Noticias" setOpen={setOpen} />
+          <NavItem to="/galeria" icon={<FaImages />} label="Galería" setOpen={setOpen} />
+          <NavItem to="/equipo" icon={<FaUsers />} label="Equipo" setOpen={setOpen} />
+          <NavItem to="/app" icon={<FaMobileAlt />} label="App" setOpen={setOpen} />
+          <NavItem to="/merch" icon={<FaTshirt />} label="Merch" setOpen={setOpen} />
+          <NavItem to="/trailer" icon={<FaVideo />} label="Trailer" setOpen={setOpen} />
         </div>
       )}
     </div>
   );
 };
 
-const NavItem = ({ to, icon, label }) => (
+const NavItem = ({ to, icon, label, setOpen }) => (
   <Link
     to={to}
+    onClick={() => setOpen(false)}
     className="flex items-center gap-3 text-white hover:text-cyan-400 font-semibold transition-all duration-200"
   >
     <span className="text-lg">{icon}</span>

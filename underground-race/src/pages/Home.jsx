@@ -9,7 +9,7 @@ const sections = [
   {
     title: "Inicio",
     angle: "0deg",
-    description: "Bienvenido al universo del documental",
+    description: "Bienvenido a Underground Race",
     link: "/",
   },
   {
@@ -105,7 +105,7 @@ const Home = () => {
           Underground Race
         </h1>
         <p className="mt-4 text-white text-md md:text-lg max-w-2xl mx-auto opacity-80">
-          Un viaje visual a través de las quedadas clandestinas en Cantabria.
+          Un viaje audiovisual a través de las quedadas clandestinas en Cantabria.
           Descubre los dos lados de la historia: la calle... y la ley.
         </p>
       </motion.div>
