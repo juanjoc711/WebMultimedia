@@ -5,32 +5,46 @@ const ModelViewer = ({ cameraAngle }) => {
 
   useEffect(() => {
     if (modelRef.current) {
-      modelRef.current.setAttribute("camera-orbit", cameraAngle);
+      const viewer = modelRef.current;
+  
+      // Reiniciar el movimiento del usuario
+      viewer.removeAttribute("auto-rotate");
+      viewer.setAttribute("disable-auto-rotate", "");
+      viewer.setAttribute("camera-orbit", cameraAngle);
+      viewer.setAttribute("interaction-prompt", "none");
+      viewer.cameraOrbit = cameraAngle;
+      viewer.cameraTarget = '0m 0m 0m';
+      // Forzar regreso suave al ángulo asignado
+      requestAnimationFrame(() => {
+        viewer.cameraOrbit = cameraAngle;
+        viewer.jumpCameraToGoal(); // posicional instantáneo
+      });
     }
   }, [cameraAngle]);
-
+  
   return (
-    <model-viewer
-      ref={modelRef}
-      src="/bugatti.glb"
-      alt="Bugatti Chiron"
-      camera-controls
-      disable-zoom
-      disable-auto-rotate
-      auto-rotate="false"
-      interaction-prompt="none"
-      exposure="2"
-      shadow-intensity="1"
-      environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
-      style={{
-        width: "100%",
-        height: "100vh",
-        backgroundColor: "transparent",
-        objectFit: "contain",
-        borderRadius: "12px",
-        transition: "all 0.5s ease",
-      }}
-    />
+<model-viewer
+  ref={modelRef}
+  src="/bugatti.glb"
+  alt="Bugatti Chiron"
+  camera-controls
+  disable-zoom
+  disable-auto-rotate
+  auto-rotate="false"
+  interaction-prompt="none"
+  style={{
+    width: "100%",
+    height: "100vh",
+    backgroundColor: "transparent",
+    objectFit: "contain",
+    borderRadius: "12px",
+    transition: "camera-orbit 1s ease-in-out",
+  }}
+  environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+  exposure="2"
+  shadow-intensity="1"
+/>
+
   );
 };
 
