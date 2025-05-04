@@ -1,39 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-
-const sections = [
-  {
-    title: "Noticias",
-    description: "Lo último sobre el documental y más",
-    link: "/noticias",
-  },
-  {
-    title: "Galería",
-    description: "Fotos exclusivas de las KDDs",
-    link: "/galeria",
-  },
-  {
-    title: "Equipo",
-    description: "Conoce a quienes lo hacemos posible",
-    link: "/equipo",
-  },
-  {
-    title: "App Móvil",
-    description: "Descarga y prueba nuestra app",
-    link: "/app",
-  },
-  {
-    title: "Merch",
-    description: "Camisetas, tazas y más",
-    link: "/merch",
-  },
-  {
-    title: "Trailer",
-    description: "Mira el avance oficial del documental",
-    link: "/trailer",
-  },
-];
 
 const SectionPreview = ({ index, sections }) => {
   if (!sections || index < 0 || index >= sections.length) return null;
@@ -41,15 +8,37 @@ const SectionPreview = ({ index, sections }) => {
   const section = sections[index];
 
   return (
-    <div className="absolute bottom-6 left-6 text-white z-10">
-      <h2 className="text-cyan-400 text-xl font-bold">{section.title}</h2>
-      <p className="text-sm">Lo último sobre el documental y más</p>
-      <a href={`/${section.title.toLowerCase()}`} className="text-white font-semibold mt-2 inline-block">
-        Ver más
-      </a>
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={section.title}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.6 }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-black/60 backdrop-blur-sm rounded-xl px-6 py-4 text-center text-white z-20 shadow-lg max-w-[90%] w-[500px]"
+      >
+        <h2 className="text-2xl font-bold text-cyan-300">{section.title}</h2>
+        <p className="text-sm mt-2">{section.description}</p>
+        {section.link.startsWith("/") ? (
+          <Link
+            to={section.link}
+            className="mt-4 inline-block text-white font-semibold hover:underline"
+          >
+            Ver más →
+          </Link>
+        ) : (
+          <a
+            href={section.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-white font-semibold hover:underline"
+          >
+            Ver más →
+          </a>
+        )}
+      </motion.div>
+    </AnimatePresence>
   );
 };
-
 
 export default SectionPreview;

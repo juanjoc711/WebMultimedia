@@ -4,15 +4,56 @@ import SectionPreview from "../components/SectionPreview";
 import ModelViewer from "../components/ModelViewer";
 
 const sections = [
-  { title: "Inicio", angle: "0deg" },
-  { title: "Noticias", angle: "45deg" },
-  { title: "Galería", angle: "90deg" },
-  { title: "Equipo", angle: "135deg" },
-  { title: "App", angle: "180deg" },
-  { title: "Merch", angle: "225deg" },
-  { title: "Trailer", angle: "270deg" },
-  { title: "Redes", angle: "315deg" },
+  {
+    title: "Inicio",
+    angle: "0deg",
+    description: "Bienvenido al universo del documental",
+    link: "/",
+  },
+  {
+    title: "Noticias",
+    angle: "45deg",
+    description: "Lo último sobre el documental y más",
+    link: "/noticias",
+  },
+  {
+    title: "Galería",
+    angle: "90deg",
+    description: "Fotos exclusivas de las KDDs",
+    link: "/galeria",
+  },
+  {
+    title: "Equipo",
+    angle: "135deg",
+    description: "Conoce a quienes lo hacemos posible",
+    link: "/equipo",
+  },
+  {
+    title: "App",
+    angle: "180deg",
+    description: "Descarga y prueba nuestra app",
+    link: "/app",
+  },
+  {
+    title: "Merch",
+    angle: "225deg",
+    description: "Camisetas, tazas y más",
+    link: "/merch",
+  },
+  {
+    title: "Trailer",
+    angle: "270deg",
+    description: "Mira el avance oficial del documental",
+    link: "/trailer",
+  },
+  {
+    title: "Redes",
+    angle: "315deg",
+    description: "Síguenos en nuestras redes sociales",
+    link: "https://instagram.com", 
+  },
 ];
+
 
 const Home = () => {
   const [index, setIndex] = useState(0);
