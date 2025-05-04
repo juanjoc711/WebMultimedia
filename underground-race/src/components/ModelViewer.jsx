@@ -16,13 +16,16 @@ const ModelViewer = ({ cameraAngle }) => {
       alt="Bugatti Chiron"
       camera-controls
       disable-zoom
+      disable-auto-rotate
+      auto-rotate="false"
+      interaction-prompt="none"
       exposure="2"
       shadow-intensity="1"
       environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
       style={{
         width: "100%",
         height: "100vh",
-        backgroundColor: "#000000",
+        backgroundColor: "transparent",
         objectFit: "contain",
         borderRadius: "12px",
         transition: "all 0.5s ease",

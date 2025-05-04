@@ -5,8 +5,8 @@ const Layout = () => {
   return (
     <div className="relative bg-black min-h-screen w-full overflow-x-hidden">
       <Navbar />
-      <main className="w-full max-w-screen overflow-x-hidden">
-        <Outlet />
+      <main className="w-full overflow-x-hidden relative">
+                <Outlet />
       </main>
     </div>
   );

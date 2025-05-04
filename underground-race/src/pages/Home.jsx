@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SectionPreview from "../components/SectionPreview";
 import ModelViewer from "../components/ModelViewer";
+import ScrollHint from "../components/ScrollHint";
 
 const sections = [
   {
@@ -50,10 +51,9 @@ const sections = [
     title: "Redes",
     angle: "315deg",
     description: "Síguenos en nuestras redes sociales",
-    link: "https://instagram.com", 
+    link: "https://instagram.com",
   },
 ];
-
 
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -66,7 +66,6 @@ const Home = () => {
       return next;
     });
   };
-  
 
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);
@@ -75,10 +74,20 @@ const Home = () => {
 
   return (
     <div className="w-screen h-screen bg-black overflow-hidden relative">
+      {/* Fondo de gradiente animado neón */}
+      <div className="absolute inset-0 z-0 pointer-events-none animate-backgroundPulse bg-gradient-radial from-purple-900 via-black to-black opacity-40"></div>
+
+      {/* Halo de luz morada debajo del coche */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-purple-600 opacity-20 blur-[120px] rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+      </div>
+
+      {/* Elementos de interfaz */}
       <Navbar />
+      <ScrollHint />
       <ModelViewer cameraAngle={sections[index].angle} />
       <SectionPreview index={index} sections={sections} />
-      </div>
+    </div>
   );
 };
 
