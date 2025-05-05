@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SectionPreview from "../components/SectionPreview";
-import ModelViewer from "../components/ModelViewer";
 import ScrollHint from "../components/ScrollHint";
 import { motion } from "framer-motion";
+import Scene3D from "../components/Scene3D";
 
 const sections = [
   {
@@ -90,7 +90,7 @@ const Home = () => {
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-purple-600 opacity-20 blur-[120px] rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      {/* Elementos */}
+      {/* Elementos UI */}
       <Navbar />
       <ScrollHint />
 
@@ -100,7 +100,7 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="absolute top-10 md:top-16 w-full z-30 text-center px-4"
-        >
+      >
         <h1 className="text-4xl md:text-6xl font-extrabold text-cyan-400 drop-shadow-lg">
           Underground Race
         </h1>
@@ -110,8 +110,12 @@ const Home = () => {
         </p>
       </motion.div>
 
-      {/* Modelo y previews */}
-      <ModelViewer cameraAngle={sections[index].angle} />
+      {/* Modelo 3D */}
+      <Scene3D cameraAngle={sections[index].angle} />
+
+
+
+      {/* Contenido inferior */}
       <SectionPreview
         index={index}
         sections={sections}
