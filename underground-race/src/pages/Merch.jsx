@@ -1,11 +1,29 @@
-const Merch = () => {
-    return (
-      <div className="text-white p-6">
-        <h1 className="text-3xl font-bold text-neon">Merchandising</h1>
-        <p>Camisetas, tazas y mucho más en nuestra tienda.</p>
+import React from "react";
+import "../pages/Merch.css";
+
+function Merch() {
+  return (
+    <div className="merch-container">
+      <h2 className="merch-title">Merch Oficial</h2>
+
+      <div className="merch-galeria">
+        <div className="merch-item">
+          <img src="/img/CamisaMerch.png" alt="Camiseta 1" />
+          <p>Camiseta Edición Especial</p>
+        </div>
+        <div className="merch-item">
+          <img src="/img/TazaMerch.png" alt="Taza 1" />
+          <p>Taza Racing</p>
+        </div>
       </div>
-    );
-  };
-  
-  export default Merch;
-  
+
+      <div className="en-progreso">
+        <h3>¡Próximamente más productos!</h3>
+        <p>Estamos trabajando para traerte lo mejor de nuestro estilo callejero.</p>
+        <span className="loader"></span>
+      </div>
+    </div>
+  );
+}
+
+export default Merch;
