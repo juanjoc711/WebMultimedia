@@ -6,16 +6,15 @@ const Particles3D = () => {
   const ref = useRef();
   const count = 300;
 
-  const positions = new Float32Array(count * 3).map(() => (Math.random() - 0.5) * 10);
+  const positions = new Float32Array(count * 3).map(
+    () => (Math.random() - 0.5) * 10
+  );
   const geometry = new THREE.BufferGeometry();
   geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
-  let rotation = 0;
-
   useFrame((_, delta) => {
-    rotation += delta * 0.05;
     if (ref.current) {
-      ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, rotation, 0.05);
+      ref.current.rotation.y += delta * 0.1; // movimiento más natural y fluido
     }
   });
 

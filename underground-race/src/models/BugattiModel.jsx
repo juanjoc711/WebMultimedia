@@ -1,4 +1,5 @@
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useMemo } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -7,30 +8,29 @@ const BugattiModel = ({ angle }) => {
   const modelGroup = useRef();
   const { scene } = useGLTF("/bugatti.glb");
 
-  // Preparamos el modelo una sola vez
   const processedScene = useMemo(() => {
     const clone = scene.clone(true);
-
     const box = new THREE.Box3().setFromObject(clone);
     const size = new THREE.Vector3();
     const center = new THREE.Vector3();
     box.getSize(size);
     box.getCenter(center);
-
-    // Centrado y escalado
     clone.position.sub(center);
     const scaleFactor = 3.2 / Math.max(size.x, size.y, size.z);
     clone.scale.setScalar(scaleFactor);
-
     return clone;
   }, [scene]);
 
-  useEffect(() => {
+  useFrame(() => {
     if (group.current) {
-      const angleRad = parseFloat(angle) * (Math.PI / 180);
-      group.current.rotation.y = angleRad;
+      const targetAngle = parseFloat(angle) * (Math.PI / 180);
+      group.current.rotation.y = THREE.MathUtils.lerp(
+        group.current.rotation.y,
+        targetAngle,
+        0.08
+      );
     }
-  }, [angle]);
+  });
 
   return (
     <group ref={group}>
