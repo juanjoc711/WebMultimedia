@@ -101,7 +101,7 @@ const Home = () => {
         transition={{ duration: 1 }}
         className="absolute top-10 md:top-16 w-full z-30 text-center px-4"
       >
-        <h1 className="text-4xl md:text-6xl font-extrabold text-red-400 drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-cyan-400 drop-shadow-lg">
           Underground Race
         </h1>
         <p className="mt-4 text-white text-md md:text-lg max-w-2xl mx-auto opacity-80">
