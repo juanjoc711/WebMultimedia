@@ -49,9 +49,11 @@ const MiniCard = ({ section, position = "left", onClick, scrollDir }) => {
           scale: 0.6,
         }}
         transition={{ duration: 0.5 }}
-        className={`bg-black/40 backdrop-blur-sm rounded-xl px-4 py-3 text-white text-center w-40 absolute bottom-10 ${
-          isLeft ? "left-4" : "right-4"
-        } z-40 hover:opacity-100 hover:bg-black/70 transition-all`}
+        className={`bg-black/40 backdrop-blur-sm rounded-xl px-4 py-3 text-white text-center w-32 absolute bottom-12 z-30 hover:opacity-100 hover:bg-black/70 transition-all ${
+          isLeft
+            ? "left-[calc(45%-300px)] -translate-x-full"
+            : "right-[calc(45%-300px)] translate-x-full"
+        }`}
         whileHover={{ scale: 1.05, opacity: 1 }}
       >
         <div className="flex justify-center mb-1">
@@ -62,6 +64,7 @@ const MiniCard = ({ section, position = "left", onClick, scrollDir }) => {
     </AnimatePresence>
   );
 };
+
 
 const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
   const [showSocials, setShowSocials] = useState(false);
@@ -90,7 +93,7 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
         transition={{ duration: 0.6 }}
         className="flex justify-center absolute bottom-10 w-full z-50 px-4"
       >
-        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl px-6 py-5 shadow-xl border border-white/10 text-white text-center max-w-[480px] w-full">
+        <div className="relative bg-black/70 backdrop-blur-md rounded-2xl px-6 py-5 shadow-xl border border-white/10 text-white text-center max-w-[480px] w-full z-40">
           <div className="flex items-center justify-center mb-2">
             {iconMap[current.title]}
           </div>
@@ -105,9 +108,7 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
             >
               Ver más →
             </button>
-
           ) : current.link.startsWith("/") ? (
-
             <Link
               to={current.link}
               className="mt-4 inline-block text-white font-semibold hover:underline transition-all"
@@ -146,5 +147,6 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
     </AnimatePresence>
   );
 };
+
 
 export default SectionPreview;

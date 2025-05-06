@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaMapMarkedAlt, FaCameraRetro, FaHashtag } from "react-icons/fa";
 
 const AppPage = () => {
   return (
@@ -8,31 +9,70 @@ const AppPage = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-cyan-600 mb-10"
+        className="text-5xl md:text-6xl font-extrabold text-cyan-500 mb-12 drop-shadow-md"
       >
-        Nuestra App Móvil
+        Bienvenido al futuro de Underground Race
       </motion.h2>
 
-      <div className="flex flex-col items-center mb-10">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="flex flex-col items-center mb-16"
+      >
         <img
-          src="/img/QR_code.png"
-          alt="Código QR"
-          className="w-56 h-56 border-4 border-cyan-600 bg-white p-2 rounded-lg shadow-xl"
+          src="/img/qr-code (1).png"
+          alt="Código QR App"
+          className="w-56 h-56 border-4 border-cyan-500 bg-white p-2 rounded-2xl shadow-xl hover:scale-105 transition-transform"
         />
-        <p className="mt-4 text-gray-400 text-lg">Escanea el código para acceder a la app</p>
-      </div>
+        <p className="mt-5 text-gray-300 text-lg">
+          Escanea el código para acceder a la demo de la app
+        </p>
+      </motion.div>
 
-      <div className="border-2 border-dashed border-cyan-600 bg-neutral-800 rounded-lg p-6 max-w-xl mx-auto">
-        <h3 className="text-cyan-600 text-2xl font-semibold mb-4">¡Próximamente!</h3>
-        <p className="text-gray-300 mb-2">
-          Actualmente el código QR que aparece en pantalla solo es de prueba.
-        </p>
-        <p className="text-gray-300 mb-2">
-          Estamos trabajando en el desarrollo de nuestra aplicación móvil para ofrecerte una experiencia más completa.
-        </p>
-        <p className="text-gray-300 mb-4">¡Mantente atento a nuestras actualizaciones!</p>
-        <div className="w-5 h-5 border-4 border-cyan-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        className="bg-neutral-900 border border-cyan-500/20 rounded-2xl p-8 max-w-3xl mx-auto shadow-lg"
+      >
+        <h3 className="text-3xl font-bold text-cyan-400 mb-6">
+          ¿Qué puedes hacer ya en la demo?
+        </h3>
+
+        <div className="grid md:grid-cols-3 gap-6 text-left">
+          <div className="bg-black/30 rounded-xl p-4 border border-cyan-600/20 hover:bg-black/50 transition">
+            <FaMapMarkedAlt className="text-3xl text-cyan-500 mb-3" />
+            <h4 className="text-lg font-semibold text-white">🌍 Acceso al Mapa</h4>
+            <p className="text-gray-400 text-sm mt-1">
+              Explora ubicaciones clave del universo Underground directamente desde tu móvil.
+            </p>
+          </div>
+
+          <div className="bg-black/30 rounded-xl p-4 border border-cyan-600/20 hover:bg-black/50 transition">
+            <FaCameraRetro className="text-3xl text-cyan-500 mb-3" />
+            <h4 className="text-lg font-semibold text-white">📸 Subida de Imágenes</h4>
+            <p className="text-gray-400 text-sm mt-1">
+              Comparte tus mejores momentos de las quedadas con la comunidad.
+            </p>
+          </div>
+
+          <div className="bg-black/30 rounded-xl p-4 border border-cyan-600/20 hover:bg-black/50 transition">
+            <FaHashtag className="text-3xl text-cyan-500 mb-3" />
+            <h4 className="text-lg font-semibold text-white">🔗 Redes Sociales</h4>
+            <p className="text-gray-400 text-sm mt-1">
+              Conecta fácilmente con nuestras cuentas oficiales y no te pierdas nada.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <p className="text-gray-400">
+            Esto es solo el comienzo. Muy pronto añadiremos nuevas funciones para que vivas la experiencia como si estuvieras ahí. 💥
+          </p>
+          <div className="w-6 h-6 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin mx-auto mt-4"></div>
+        </div>
+      </motion.div>
     </div>
   );
 };

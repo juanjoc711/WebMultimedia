@@ -92,7 +92,7 @@ const Home = () => {
 
       {/* Elementos UI */}
       <Navbar />
-      <ScrollHint />
+      <ScrollHint scrollDir={scrollDir} />
 
       {/* TÍTULO Y SUBTÍTULO */}
       <motion.div
