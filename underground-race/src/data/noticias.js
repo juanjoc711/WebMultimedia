@@ -22,7 +22,7 @@ Así fue una noche liderada por la adrenalina, olor a gasolina, rivalidades y un
       `
     },  {
         id: "noche-clandestina-20252",
-        titulo: "Por determinar",
+        titulo: "Una noche de locura",
         fecha: "18 de enero de 2025",
         resumen: "Una noche cargada de tensión, rugidos de motores y caos entre clubes rivales en un encuentro clandestino.",
         imagen: "/img/coche2.JPG",

@@ -8,9 +8,9 @@ const imagenes = [
 ];
 
 const videos = [
-  { src: "/videos/videofondo1.MOV" }, { src: "/videos/videofondo2.MOV" },
-  { src: "/videos/videofondo3.MOV" }, { src: "/videos/videofondo4.MOV" },
-  { src: "/videos/videofondo5.MOV" }, { src: "/videos/Videodesdearriba.MP4" },
+  { src: "/videos/videofondo1.mp4" }, { src: "/videos/videofondo2.mp4" },
+  { src: "/videos/videofondo3.mp4" }, { src: "/videos/videofondo4.mp4" },
+  { src: "/videos/videofondo5.mp4" }, { src: "/videos/videodesdearriba.mp4" },
 ];
 
 const Galeria = () => {
