@@ -10,7 +10,7 @@ const imagenes = [
 const videos = [
   { src: "/videos/videofondo1.mp4" }, { src: "/videos/videofondo2.mp4" },
   { src: "/videos/videofondo3.mp4" }, { src: "/videos/videofondo4.mp4" },
-  { src: "/videos/videofondo5.mp4" }, { src: "/videos/videodesdearriba.mp4" },
+  { src: "/videos/videofondo5.mp4" }, { src: "/img/videodesdearriba.mp4" },
 ];
 
 const Galeria = () => {
