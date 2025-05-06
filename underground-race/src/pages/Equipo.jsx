@@ -98,10 +98,12 @@ const Equipo = () => {
             <p className="italic text-gray-400">{persona.rol}</p>
             <button
               onClick={() => setActivo(index === activo ? null : index)}
-              className="mt-3 text-sm text-cyan-400 hover:underline"
+              className="mt-4 px-4 py-2 text-sm font-semibold text-white bg-black/30 border border-cyan-500 rounded-lg hover:bg-cyan-600 hover:text-black transition-all duration-300 shadow-md backdrop-blur-sm"
             >
               {activo === index ? "Ocultar detalles" : "Más detalles"}
             </button>
+
+
             {activo === index && (
               <div className="mt-4 text-sm text-gray-300">
                 <img src={persona.imagenCoche} alt={persona.cocheFavorito} className="rounded-lg mb-2" />
