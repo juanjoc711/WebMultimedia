@@ -59,6 +59,9 @@ const sections = [
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [scrollDir, setScrollDir] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(null);
+  const [touchEndY, setTouchEndY] = useState(null);
+
 
   const handleScroll = (e) => {
     const direction = e.deltaY > 0 ? 1 : -1;
@@ -69,6 +72,14 @@ const Home = () => {
       return next;
     });
   };
+  const handleTouchStart = (e) => {
+  setTouchStartY(e.changedTouches[0].clientY);
+};
+
+const handleTouchEnd = (e) => {
+  setTouchEndY(e.changedTouches[0].clientY);
+};
+
 
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);
@@ -80,8 +91,31 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, [scrollDir]);
 
+  useEffect(() => {
+  if (touchStartY !== null && touchEndY !== null) {
+    const deltaY = touchStartY - touchEndY;
+
+    if (Math.abs(deltaY) > 50) { // umbral mínimo
+      const direction = deltaY > 0 ? 1 : -1;
+      setScrollDir(direction);
+      setIndex((prev) => {
+        const next = prev + direction;
+        if (next < 0 || next >= sections.length) return prev;
+        return next;
+      });
+    }
+
+    // Reset
+    setTouchStartY(null);
+    setTouchEndY(null);
+  }
+}, [touchEndY]);
+
   return (
-    <div className="w-screen h-screen bg-black overflow-hidden relative">
+    <div className="w-screen h-screen bg-black overflow-hidden relative"
+     onTouchStart={handleTouchStart}
+       onTouchEnd={handleTouchEnd}>
+      
       {/* Fondo animado */}
       <div className="absolute inset-0 z-0 pointer-events-none animate-backgroundPulse bg-gradient-radial from-purple-900 via-black to-black opacity-40"></div>
 
