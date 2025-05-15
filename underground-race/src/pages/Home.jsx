@@ -59,8 +59,9 @@ const sections = [
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [scrollDir, setScrollDir] = useState(0);
-  const [touchStartY, setTouchStartY] = useState(null);
-  const [touchEndY, setTouchEndY] = useState(null);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+
 
 
   const handleScroll = (e) => {
@@ -73,12 +74,13 @@ const Home = () => {
     });
   };
   const handleTouchStart = (e) => {
-  setTouchStartY(e.changedTouches[0].clientY);
+  setTouchStartX(e.changedTouches[0].clientX);
 };
 
 const handleTouchEnd = (e) => {
-  setTouchEndY(e.changedTouches[0].clientY);
+  setTouchEndX(e.changedTouches[0].clientX);
 };
+
 
 
   useEffect(() => {
@@ -92,11 +94,11 @@ const handleTouchEnd = (e) => {
   }, [scrollDir]);
 
   useEffect(() => {
-  if (touchStartY !== null && touchEndY !== null) {
-    const deltaY = touchStartY - touchEndY;
+  if (touchStartX !== null && touchEndX !== null) {
+    const deltaX = touchStartX - touchEndX;
 
-    if (Math.abs(deltaY) > 50) { // umbral mínimo
-      const direction = deltaY > 0 ? 1 : -1;
+    if (Math.abs(deltaX) > 50) { // umbral de sensibilidad
+      const direction = deltaX > 0 ? 1 : -1; // izquierda = siguiente, derecha = anterior
       setScrollDir(direction);
       setIndex((prev) => {
         const next = prev + direction;
@@ -106,10 +108,11 @@ const handleTouchEnd = (e) => {
     }
 
     // Reset
-    setTouchStartY(null);
-    setTouchEndY(null);
+    setTouchStartX(null);
+    setTouchEndX(null);
   }
-}, [touchEndY]);
+}, [touchEndX]);
+
 
   return (
     <div className="w-screen h-screen bg-black overflow-hidden relative"

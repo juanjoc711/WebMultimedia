@@ -100,7 +100,8 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
           <h2 className="text-xl font-bold text-cyan-300">{current.title}</h2>
           <p className="text-sm mt-1">{current.description}</p>
 
-          {current.title === "Redes" ? (
+          {current.title !== "Inicio" && (
+          current.title === "Redes" ? (
             <button
               onClick={() => setShowSocials(!showSocials)}
               className="mt-4 inline-block font-semibold text-white hover:underline transition-all bg-transparent border-none p-0"
@@ -124,7 +125,7 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
             >
               Ver más →
             </a>
-          )}
+          ))}
         </div>
 
         {current.title === "Redes" && showSocials && (
