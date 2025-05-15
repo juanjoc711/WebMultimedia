@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 const imagenes = [
   "/img/IMG1.JPG", "/img/IMG2.JPG", "/img/IMG3.JPG", "/img/IMG4.JPG", "/img/IMG5.JPG",
   "/img/IMG6.JPG", "/img/IMG7.JPG", "/img/IMG8.JPG", "/img/IMG9.JPG", "/img/IMG10.JPG",
-  "/img/IMG11.JPG", "/img/IMG12.JPG", "/img/IMG13.JPG", "/img/IMG14.JPG", "/img/IMG15.JPG",
+  "/img/IMG11.JPG", "/img/IMG12.JPG", "/img/IMG13.JPG", "/img/IMG14.JPG", "/img/IMG15.JPG","/img/IMG16.JPG",
 ];
 
 const videos = [
-  { src: "/videos/videofondo1.mp4" }, { src: "/videos/videofondo2.mp4" },
-  { src: "/videos/videofondo3.mp4" }, { src: "/videos/videofondo4.mp4" },
-  { src: "/videos/videofondo5.mp4" }, { src: "/img/videodesdearriba.mp4" },
+  { src: "/videos/Video1.mp4" }, { src: "/videos/Video2.mp4" },
+  { src: "/videos/Video3.mp4" }, { src: "/videos/Video4.mp4" },
+  { src: "/videos/Video5.mp4" }, { src: "/img/Video6.mp4" },
 ];
 
 const Galeria = () => {
