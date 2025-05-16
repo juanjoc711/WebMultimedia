@@ -1,16 +1,32 @@
 // src/pages/Trailer.jsx
-
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { FaTimes } from "react-icons/fa"; // ícono de X
 
 const Trailer = () => {
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    navigate("/"); // puedes cambiar esta ruta según a dónde quieras volver
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center px-4 overflow-x-hidden w-full">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center px-4 overflow-x-hidden w-full relative">
+      {/* Botón X */}
+      <button
+        onClick={handleClose}
+        className="absolute top-6 right-6 text-white hover:text-red-500 text-2xl z-50"
+        aria-label="Cerrar trailer"
+      >
+        <FaTimes />
+      </button>
+
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-cyan-400 my-10 text-center"
+        className="text-4xl font-bold text-red-800 my-10 text-center"
       >
         Trailer Oficial
       </motion.h1>
@@ -23,8 +39,6 @@ const Trailer = () => {
             controls
             muted
             autoPlay={true}
-            frameBorder="0"
-            allowFullScreen
           ></video>
         </div>
       </div>

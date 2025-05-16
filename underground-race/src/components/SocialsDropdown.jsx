@@ -12,7 +12,7 @@ const socials = [
     name: "Instagram",
     icon: <FaInstagram className="text-xl text-white" />,
     url: "https://www.instagram.com/undergroundrace_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    color: "bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500",
+    color: "bg-gradient-to-br from-pink-500 via-red-800 to-yellow-500",
   },
 ];
 
@@ -26,7 +26,7 @@ const SocialsDropdown = ({ onClose }) => {
       className="absolute bottom-24 w-full flex justify-center z-50"
     >
       <div className="bg-black/80 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-xl w-[90%] max-w-md text-center">
-        <h3 className="text-cyan-300 font-bold text-lg mb-4">Síguenos 🔥</h3>
+        <h3 className="text-red-800 font-bold text-lg mb-4">Síguenos 🔥</h3>
         <div className="space-y-4">
           {socials.map((s, idx) => (
             <motion.a

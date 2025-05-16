@@ -28,7 +28,7 @@ const Galeria = () => {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center text-4xl font-bold text-cyan-600 mb-10"
+        className="text-center text-4xl font-bold text-red-800 mb-10"
       >
         Galería de Fotos
       </motion.h2>
@@ -38,7 +38,7 @@ const Galeria = () => {
           <motion.div
             key={i}
             whileHover={{ scale: 1.05 }}
-            className="p-2 rounded-xl border-2 border-cyan-600 bg-neutral-900 shadow-lg hover:shadow-cyan-600/30 transition"
+            className="p-2 rounded-xl border-2 border-red-800 bg-neutral-900 shadow-lg hover:shadow-red-800/30 transition"
           >
             <img
               src={src}
@@ -59,20 +59,20 @@ const Galeria = () => {
           <img
             src={imagenActiva}
             alt="ampliada"
-            className="max-w-[90%] max-h-[90%] rounded-xl border-4 border-cyan-600 shadow-2xl"
+            className="max-w-[90%] max-h-[90%] rounded-xl border-4 border-red-800 shadow-2xl"
           />
         </div>
       )}
 
       {/* Galería de Videos */}
-      <h2 className="text-center text-4xl font-bold text-cyan-600 mt-20 mb-10">
+      <h2 className="text-center text-4xl font-bold text-red-800 mt-20 mb-10">
         Galería de Videos
       </h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((v, i) => (
           <div
             key={i}
-            className="bg-neutral-900 border-2 border-cyan-600 p-4 rounded-lg shadow-lg"
+            className="bg-neutral-900 border-2 border-red-800 p-4 rounded-lg shadow-lg"
           >
             <video controls className="w-full rounded-md">
               <source src={v.src} type="video/mp4" />

@@ -17,7 +17,7 @@ const NoticiaDetalle = () => {
     >
       <Link
         to="/noticias"
-        className="text-cyan-400 mb-6 inline-block hover:underline"
+        className="text-red-800 mb-6 inline-block hover:underline"
       >
         ← Volver
       </Link>
@@ -31,7 +31,7 @@ const NoticiaDetalle = () => {
         transition={{ duration: 0.8 }}
       />
 
-      <h1 className="text-3xl font-bold text-cyan-400 mb-2">
+      <h1 className="text-3xl font-bold text-red-800 mb-2">
         {noticia.titulo}
       </h1>
       <p className="text-gray-400 mb-4">{noticia.fecha}</p>

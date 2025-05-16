@@ -23,13 +23,13 @@ const Navbar = () => {
           className="group relative p-1 rounded-full bg-black/50 backdrop-blur-md transition hover:scale-105 focus:outline-none shadow-2xl"
         >
           {/* Glow */}
-          <div className="absolute inset-0 rounded-full bg-cyan-500 opacity-30 blur-lg group-hover:opacity-70 transition-all duration-300"></div>
+          <div className="absolute inset-0 rounded-full bg-red-800 opacity-30 blur-lg group-hover:opacity-70 transition-all duration-300"></div>
 
           {/* Imagen */}
           <img
             src={logo}
             alt="Logo"
-            className="w-16 h-16 object-cover rounded-full relative z-10 border-2 border-cyan-500 shadow-xl"
+            className="w-16 h-16 object-cover rounded-full relative z-10 border-2 border-red-800 shadow-xl"
           />
         </button>
       </div>
@@ -53,7 +53,7 @@ const NavItem = ({ to, icon, label, setOpen }) => (
   <Link
     to={to}
     onClick={() => setOpen(false)}
-    className="flex items-center gap-3 text-white hover:text-cyan-400 font-semibold transition-all duration-200"
+    className="flex items-center gap-3 text-white hover:text-red-800 font-semibold transition-all duration-200"
   >
     <span className="text-lg">{icon}</span>
     <span>{label}</span>

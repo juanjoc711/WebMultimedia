@@ -21,7 +21,7 @@ const Merch = () => {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-cyan-400 my-10 text-center"
+        className="text-4xl font-bold text-red-800 my-10 text-center"
       >
         Merch Oficial
       </motion.h1>
@@ -34,7 +34,7 @@ const Merch = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="bg-neutral-900 p-4 rounded-lg shadow-lg hover:shadow-cyan-600/30 hover:scale-[1.015] transition-transform duration-300 group"
+              className="bg-neutral-900 p-4 rounded-lg shadow-lg hover:shadow-red-800/30 hover:scale-[1.015] transition-transform duration-300 group"
             >
               <div className="overflow-hidden rounded">
                 <img
@@ -43,7 +43,7 @@ const Merch = () => {
                   className="w-full h-48 object-cover rounded group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <h2 className="text-xl mt-4 font-semibold group-hover:text-cyan-400 transition-colors">
+              <h2 className="text-xl mt-4 font-semibold group-hover:text-red-800 transition-colors">
                 {producto.nombre}
               </h2>
             </motion.div>
@@ -51,15 +51,15 @@ const Merch = () => {
         </div>
       </div>
 
-      <div className="mt-12 w-full max-w-3xl text-center border-2 border-dashed border-cyan-400 p-6 rounded-lg bg-neutral-800">
-        <h3 className="text-2xl font-semibold text-cyan-400 mb-4">
+      <div className="mt-12 w-full max-w-3xl text-center border-2 border-dashed border-red-800 p-6 rounded-lg bg-neutral-800">
+        <h3 className="text-2xl font-semibold text-red-800 mb-4">
           ¡Próximamente más productos!
         </h3>
         <p className="text-gray-300">
           Estamos trabajando para traerte lo mejor de nuestro estilo callejero.
         </p>
         <div className="mt-4 flex justify-center">
-          <div className="loader border-4 border-cyan-400 border-t-transparent rounded-full w-6 h-6 animate-spin"></div>
+          <div className="loader border-4 border-red-800 border-t-transparent rounded-full w-6 h-6 animate-spin"></div>
         </div>
       </div>
     </div>

@@ -2,11 +2,25 @@ import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import { useEffect, useState } from "react"; // ya usas useMemo y useRef
+
 
 const BugattiModel = ({ angle }) => {
   const group = useRef();
   const modelGroup = useRef();
   const { scene } = useGLTF("/bugatti.glb");
+   const [scale, setScale] = useState(1);
+
+    useEffect(() => {
+    const updateScale = () => {
+    const isMobile = window.innerWidth < 768;
+    setScale(isMobile ? 0.6 : 1);
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+    }, []);
 
   const processedScene = useMemo(() => {
     const clone = scene.clone(true);
@@ -19,7 +33,7 @@ const BugattiModel = ({ angle }) => {
     const scaleFactor = 3.2 / Math.max(size.x, size.y, size.z);
     clone.scale.setScalar(scaleFactor);
     return clone;
-  }, [scene]);
+    }, [scene]);
 
   useFrame(() => {
     if (group.current) {
@@ -34,7 +48,9 @@ const BugattiModel = ({ angle }) => {
 
   return (
     <group ref={group}>
-      <group ref={modelGroup} position={[0, -0.3, 0]}>
+      <group ref={modelGroup} 
+      position={[0, -0.3, 0]} 
+      scal={[scale,scale,scale]}>
         <primitive object={processedScene} />
       </group>
     </group>

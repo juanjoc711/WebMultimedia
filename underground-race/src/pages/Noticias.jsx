@@ -18,7 +18,7 @@ const Noticias = () => {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-cyan-400 my-10 text-center"
+        className="text-4xl font-bold text-red-800 my-10 text-center"
       >
         Últimas Noticias
       </motion.h1>
@@ -32,7 +32,7 @@ const Noticias = () => {
               initial="hidden"
               animate="visible"
               variants={cardVariants}
-              className="bg-neutral-900 p-4 rounded-lg shadow-lg hover:shadow-cyan-600/30 hover:scale-[1.015] transition-transform duration-300 group"
+              className="bg-neutral-900 p-4 rounded-lg shadow-lg hover:shadow-red-800/30 hover:scale-[1.015] transition-transform duration-300 group"
             >
               <div className="overflow-hidden rounded">
                 <img
@@ -41,14 +41,14 @@ const Noticias = () => {
                   className="w-full h-48 object-cover rounded group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <h2 className="text-xl mt-4 font-semibold group-hover:text-cyan-400 transition-colors">
+              <h2 className="text-xl mt-4 font-semibold group-hover:text-red-800 transition-colors">
                 {noticia.titulo}
               </h2>
               <p className="text-sm text-gray-400">{noticia.fecha}</p>
               <p className="mt-2 text-sm text-gray-200">{noticia.resumen}</p>
               <Link
                 to={`/noticias/${noticia.id}`}
-                className="text-cyan-400 mt-3 inline-block font-semibold hover:underline"
+                className="text-red-800 mt-3 inline-block font-semibold hover:underline"
               >
                 Leer más →
               </Link>

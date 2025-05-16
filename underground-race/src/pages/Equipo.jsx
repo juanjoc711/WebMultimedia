@@ -79,7 +79,7 @@ const Equipo = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-10"
       >
-        <h1 className="text-4xl font-bold text-cyan-400 mb-2">Conoce al Equipo</h1>
+        <h1 className="text-4xl font-bold text-red-800 mb-2">Conoce al Equipo</h1>
         <p className="text-gray-400">Apasionados por la velocidad, el diseño y la cultura automotriz.</p>
       </motion.div>
 
@@ -91,14 +91,14 @@ const Equipo = () => {
         {integrantes.map((persona, index) => (
           <div
             key={index}
-            className="bg-neutral-900 p-4 rounded-xl border border-cyan-500 hover:shadow-cyan-500/40 transition-shadow relative"
+            className="bg-neutral-900 p-4 rounded-xl border border-red-800 hover:shadow-red-800/40 transition-shadow relative"
           >
             <img src={persona.imagen} alt={persona.nombre} className="w-full rounded-md mb-3" />
-            <h3 className="text-xl text-cyan-400 font-semibold">{persona.nombre}</h3>
+            <h3 className="text-xl text-red-800 font-semibold">{persona.nombre}</h3>
             <p className="italic text-gray-400">{persona.rol}</p>
             <button
               onClick={() => setActivo(index === activo ? null : index)}
-              className="mt-4 px-4 py-2 text-sm font-semibold text-white bg-black/30 border border-cyan-500 rounded-lg hover:bg-cyan-600 hover:text-black transition-all duration-300 shadow-md backdrop-blur-sm"
+              className="mt-4 px-4 py-2 text-sm font-semibold text-white bg-black/30 border border-red-800 rounded-lg hover:bg-red-800 hover:text-black transition-all duration-300 shadow-md backdrop-blur-sm"
             >
               {activo === index ? "Ocultar detalles" : "Más detalles"}
             </button>
@@ -107,7 +107,7 @@ const Equipo = () => {
             {activo === index && (
               <div className="mt-4 text-sm text-gray-300">
                 <img src={persona.imagenCoche} alt={persona.cocheFavorito} className="rounded-lg mb-2" />
-                <p><strong className="text-cyan-300">Coche favorito:</strong> {persona.cocheFavorito}</p>
+                <p><strong className="text-red-800">Coche favorito:</strong> {persona.cocheFavorito}</p>
                 <p>{persona.descripcion}</p>
               </div>
             )}

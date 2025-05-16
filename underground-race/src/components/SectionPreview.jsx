@@ -14,14 +14,14 @@ import {
 import SocialsDropdown from "./SocialsDropdown"; // 👈 nuevo
 
 const iconMap = {
-  Inicio: <FaHome className="text-cyan-400 text-xl" />,
-  Noticias: <FaNewspaper className="text-cyan-400 text-xl" />,
-  Galería: <FaImages className="text-cyan-400 text-xl" />,
-  Equipo: <FaUsers className="text-cyan-400 text-xl" />,
-  App: <FaMobileAlt className="text-cyan-400 text-xl" />,
-  Merch: <FaTshirt className="text-cyan-400 text-xl" />,
-  Trailer: <FaVideo className="text-cyan-400 text-xl" />,
-  Redes: <FaHashtag className="text-cyan-400 text-xl" />,
+  Inicio: <FaHome className="text-red-800 text-xl" />,
+  Noticias: <FaNewspaper className="text-red-800 text-xl" />,
+  Galería: <FaImages className="text-red-800 text-xl" />,
+  Equipo: <FaUsers className="text-red-800 text-xl" />,
+  App: <FaMobileAlt className="text-red-800 text-xl" />,
+  Merch: <FaTshirt className="text-red-800 text-xl" />,
+  Trailer: <FaVideo className="text-red-800 text-xl" />,
+  Redes: <FaHashtag className="text-red-800 text-xl" />,
 };
 
 const MiniCard = ({ section, position = "left", onClick, scrollDir }) => {
@@ -97,7 +97,7 @@ const SectionPreview = ({ index, sections, setIndex, scrollDir }) => {
           <div className="flex items-center justify-center mb-2">
             {iconMap[current.title]}
           </div>
-          <h2 className="text-xl font-bold text-cyan-300">{current.title}</h2>
+          <h2 className="text-xl font-bold text-red-800">{current.title}</h2>
           <p className="text-sm mt-1">{current.description}</p>
 
           {current.title !== "Inicio" && (
