@@ -4,13 +4,29 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const productos = [
-  {
-    nombre: "Camiseta Edición Especial",
-    imagen: "/img/CamisaMerch.png",
+    {
+    nombre: "Camiseta edición especial Underground Race",
+    imagen: "/img/merch6.png",
   },
   {
-    nombre: "Taza Racing",
-    imagen: "/img/TazaMerch.png",
+    nombre: "Camiseta estilo Racing",
+    imagen: "/img/merch1.png",
+  },
+    {
+    nombre: "Camiseta ",
+    imagen: "/img/merch2.png",
+  },
+      {
+    nombre: "Camiseta Edición Especial",
+    imagen: "/img/merch3.png",
+  },
+  {
+    nombre: "Taza underground race",
+    imagen: "/img/merch4.png",
+  },
+    {
+    nombre: "Peluche underground race",
+    imagen: "/img/merch5.png",
   },
 ];
 
@@ -36,18 +52,19 @@ const Merch = () => {
               transition={{ delay: i * 0.1 }}
               className="bg-neutral-900 p-4 rounded-lg shadow-lg hover:shadow-red-800/30 hover:scale-[1.015] transition-transform duration-300 group"
             >
-              <div className="overflow-hidden rounded">
+              <div className="overflow-hidden rounded bg-black flex items-center justify-center h-64">
                 <img
                   src={producto.imagen}
                   alt={producto.nombre}
-                  className="w-full h-48 object-cover rounded group-hover:scale-105 transition-transform duration-500"
+                  className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h2 className="text-xl mt-4 font-semibold group-hover:text-red-800 transition-colors">
+              <h2 className="text-xl mt-4 font-semibold group-hover:text-red-800 transition-colors text-center">
                 {producto.nombre}
               </h2>
             </motion.div>
           ))}
+
         </div>
       </div>
 

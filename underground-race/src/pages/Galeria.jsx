@@ -35,7 +35,7 @@ const Galeria = () => {
         transition={{ duration: 0.6 }}
         className="text-center text-4xl font-bold text-red-800 mb-10"
       >
-        Galería de Fotos y vídeos
+        Galería de Fotos 
       </motion.h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 z-10 relative">
