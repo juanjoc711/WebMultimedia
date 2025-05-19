@@ -11,16 +11,16 @@ const BugattiModel = ({ angle }) => {
   const { scene } = useGLTF("/bugatti.glb");
    const [scale, setScale] = useState(1);
 
-    useEffect(() => {
+  useEffect(() => {
     const updateScale = () => {
-    const isMobile = window.innerWidth < 768;
-    setScale(isMobile ? 0.6 : 1);
+      const isMobile = window.innerWidth < 768;
+      setScale(isMobile ? 0.4 : 0.9); // ↓ tamaño más pequeño
     };
 
     updateScale();
     window.addEventListener("resize", updateScale);
     return () => window.removeEventListener("resize", updateScale);
-    }, []);
+  }, []);
 
   const processedScene = useMemo(() => {
     const clone = scene.clone(true);
@@ -50,7 +50,9 @@ const BugattiModel = ({ angle }) => {
     <group ref={group}>
       <group ref={modelGroup} 
       position={[0, -0.3, 0]} 
-      scal={[scale,scale,scale]}>
+      scale={[scale,scale,scale]}>
+      setScale(isMobile ? 0.5 : 1);
+
         <primitive object={processedScene} />
       </group>
     </group>

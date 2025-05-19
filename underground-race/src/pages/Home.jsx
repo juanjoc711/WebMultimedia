@@ -136,7 +136,7 @@ const handleTouchEnd = (e) => {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="absolute top-10 md:top-16 w-full z-30 text-center px-4"
+        className="absolute top-10 md:top-16 w-full z-30 text-center px-4 pt-24 md:pt-0"
       >
         <h1 className="text-4xl md:text-6xl font-extrabold text-red-800 drop-shadow-lg">
           Underground Race

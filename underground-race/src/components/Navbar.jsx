@@ -29,7 +29,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="w-16 h-16 object-cover rounded-full relative z-10 border-2 border-red-800 shadow-xl"
+            className="w-12 h-12 md:w-16 md:h-16 object-cover rounded-full relative z-10 border-2 border-red-800 shadow-xl transition-all"
           />
         </button>
       </div>
