@@ -16,7 +16,7 @@ const Trailer = () => {
       {/* Botón X */}
       <button
         onClick={handleClose}
-        className="absolute top-6 right-6 text-white hover:text-red-500 text-2xl z-50"
+        className="absolute top-6 right-6 z-50 p-2 bg-black bg-opacity-50 rounded-full text-white hover:text-red-500 transition-colors duration-300"
         aria-label="Cerrar trailer"
       >
         <FaTimes />
@@ -35,9 +35,8 @@ const Trailer = () => {
         <div className="aspect-w-16 aspect-h-9">
           <video
             className="w-full h-full rounded-lg shadow-lg"
-            src="videos/videotrailer.mp4"
+            src="https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/Trailer_Underground_Race.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvVHJhaWxlcl9VbmRlcmdyb3VuZF9SYWNlLm1wNCIsImlhdCI6MTc0NzY0ODY1NywiZXhwIjoxOTA1MzI4NjU3fQ.GH-BYdavgj5n2hHpYa4EzjUM-wU59aRH-s22fCcpyIA"
             controls
-            muted
             autoPlay={true}
           ></video>
         </div>

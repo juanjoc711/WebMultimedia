@@ -8,11 +8,14 @@ const imagenes = [
 ];
 
 const videos = [
-  {
-    src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/MVI_3136.MOV?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvTVZJXzMxMzYuTU9WIiwiaWF0IjoxNzQ3NTc1NTM2LCJleHAiOjE5MDUyNTU1MzZ9.K9x5vEI-FjRVde_M_TErhoU0Q1Hz3kZzT2KDc6sVfQ0"
-  }, { src: "/videos/Video2.mp4" },
-  { src: "/videos/Video3.mp4" }, { src: "/videos/Video4.mp4" },
-  { src: "/videos/Video5.mp4" }, { src: "/img/Video6.mp4" },
+    {
+    src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/20250418_224153.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvMjAyNTA0MThfMjI0MTUzLm1wNCIsImlhdCI6MTc0NzY0Nzc0MiwiZXhwIjoxOTA1MzI3NzQyfQ.vL7U9WESw1cYAAAMO2zrdFKeRLJJQkQ2HMCelm0mn38"
+  },
+    { src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/20250418_222848.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvMjAyNTA0MThfMjIyODQ4Lm1wNCIsImlhdCI6MTc0NzY0Nzc2MCwiZXhwIjoxOTA1MzI3NzYwfQ.BHyzN58uBu3Pp08Nbj1f_4jG5gXaFYih0bpUzNxFPEo" },
+{src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/20250502_235326.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvMjAyNTA1MDJfMjM1MzI2Lm1wNCIsImlhdCI6MTc0NzY0ODQzOSwiZXhwIjoxOTA1MzI4NDM5fQ.Yavu-aED_vRqje2Xo339AUUVOhGWyw4u0_-wIEpBGCs"},
+ { src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/MVI_3141.MOV?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvTVZJXzMxNDEuTU9WIiwiaWF0IjoxNzQ3NjQ3MjIwLCJleHAiOjE5MDUzMjcyMjB9.1Q493GVG9MfCI76qixENj4yTwIcbVzndjqQHIQo4gE0" },
+  { src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/Videodesdearriba.MP4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvVmlkZW9kZXNkZWFycmliYS5NUDQiLCJpYXQiOjE3NDc2NDcyNzAsImV4cCI6MTkwNTMyNzI3MH0.qxTmirV3RWLuTzVrBxn_X9lgi4AEeJ4tPt2lXAHkE7s" }, 
+  { src: "https://uakpiyfdezrdrgshnnde.supabase.co/storage/v1/object/sign/videos/videofondo2%20(1).mov?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2RkZWQxMGI3LWY3OGItNDNkNS1hYzE4LTUxN2U0MWRjNmVkMyJ9.eyJ1cmwiOiJ2aWRlb3MvdmlkZW9mb25kbzIgKDEpLm1vdiIsImlhdCI6MTc0NzY0NzI5MiwiZXhwIjoxOTA1MzI3MjkyfQ.z5nctZDjravDav2VmBSpWQdHgM2IND62dfVTmFKz_iQ" }, 
 ];
 
 const Galeria = () => {
@@ -32,7 +35,7 @@ const Galeria = () => {
         transition={{ duration: 0.6 }}
         className="text-center text-4xl font-bold text-red-800 mb-10"
       >
-        Galería de Fotos
+        Galería de Fotos y vídeos
       </motion.h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 z-10 relative">
